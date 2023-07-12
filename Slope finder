@@ -1,0 +1,9 @@
+import pandas as pd 
+from scipy import stats 
+
+slopeB = stats.linregress(df.iloc[:, 0], df.iloc[:, 1])
+slopeB = slopeB[0]
+
+slopes = pd.Series([slopeB], index = ['Extension slope'], name = "Slope")
+slopedf = pd.DataFrame(slopes).T
+print(slopes)
